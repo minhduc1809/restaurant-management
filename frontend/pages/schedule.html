@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quản lý Lịch làm</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Quản lý Lịch làm</h1>
+    <nav>
+      <a href="/admin">Trang chủ</a>
+      <a href="/logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <input type="text" id="searchSchedule" placeholder="Tìm theo tên nhân viên..." />
+
+    <table id="scheduleTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên nhân viên</th>
+          <th>Ca</th>
+          <th>Ngày</th>
+          <th>Số giờ làm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu Flask render ở đây -->
+      </tbody>
+    </table>
+
+    <!-- (Tuỳ chọn) Form thêm lịch làm -->
+    <section id="addScheduleSection">
+      <h2>Thêm Lịch Làm Mới</h2>
+      <form id="addScheduleForm">
+        <input type="text" name="ten_nhan_vien" placeholder="Tên nhân viên" required />
+        <select name="ca" required>
+          <option value="">-- Chọn ca --</option>
+          <option value="Sáng">Sáng</option>
+          <option value="Chiều">Chiều</option>
+          <option value="Tối">Tối</option>
+        </select>
+        <input type="date" name="ngay" required />
+        <input type="number" name="so_gio_lam" placeholder="Số giờ" required />
+        <button type="submit">Thêm</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/schedule.js"></script>
+</body>
+</html>

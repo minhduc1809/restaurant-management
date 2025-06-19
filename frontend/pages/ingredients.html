@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Nguyên liệu</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Quản lý Nguyên liệu</h1>
+    <nav>
+      <a href="/admin">Trang chủ</a>
+      <a href="/logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <input type="text" id="searchIngredient" placeholder="Tìm kiếm nguyên liệu...">
+    <table id="ingredientTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Tên</th><th>Số lượng</th><th>Đơn vị</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu từ Flask -->
+      </tbody>
+    </table>
+  </main>
+  <script src="../js/ingredients.js"></script>
+</body>
+</html>

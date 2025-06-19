@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gọi món và đặt bàn</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gọi món & Đặt bàn</h1>
+    <nav>
+      <a href="/logout">Đăng xuất</a>
+    </nav>
+  </header>
+  <main>
+    <form id="orderForm">
+      <label for="time">Thời gian đặt bàn:</label>
+      <input type="datetime-local" id="time" name="time">
+
+      <label for="people">Số người:</label>
+      <input type="number" id="people" name="people">
+
+      <h2>Thực đơn</h2>
+      <div id="menuContainer">
+        <!-- Danh sách món ăn sẽ render tại đây -->
+      </div>
+
+      <button type="submit">Đặt bàn và gọi món</button>
+    </form>
+  </main>
+  <script src="../js/order.js"></script>
+</body>
+</html>

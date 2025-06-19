@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng điều khiển Quản trị viên - Quản lý Nhà hàng</title>
+</head>
+<body>
+    <header>
+        <h1> Quản lý Nhà hàng</h1>
+        <nav>
+            <a href="statistics.html"> Thống kê</a>
+            <a href="employees.html"> Nhân viên</a>
+            <a href="ingredients.html"> Nguyên liệu</a>
+            <a href="tables.html"> Bàn ăn</a>
+            <a href="reservations.html"> Đặt bàn</a>
+            <a href="schedule.html"> Lịch làm</a>
+            <a href="orders.html"> Hóa đơn</a>
+            <a href="feedbacks.html"> Phản hồi</a>
+            <a href="login.html"> Đăng xuất</a>
+        </nav>
+    </header>
+
+    <div class="dashboard">
+        <h2>Xin chào, Quản trị viên!</h2>
+        <p class="welcome-subtitle">Chào mừng bạn đến với hệ thống quản lý nhà hàng</p>
+
+        <div class="time-display">
+            <div class="current-time" id="currentTime">--:--:--</div>
+            <div class="current-date" id="currentDate">--/--/----</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalEmployees">--</div>
+                <div class="stat-label">Nhân viên</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalTables">--</div>
+                <div class="stat-label">Bàn ăn</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todayOrders">--</div>
+                <div class="stat-label">Đơn hôm nay</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="monthlyRevenue">--</div>
+                <div class="stat-label">Doanh thu tháng</div>
+            </div>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Thống kê</h3>
+                <p>Xem báo cáo doanh thu, thống kê bán hàng và phân tích kinh doanh</p>
+                <a href="statistics.html">Xem Thống kê</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Quản lý Nhân viên</h3>
+                <p>Thêm, sửa, xóa thông tin nhân viên và phân quyền truy cập</p>
+                <a href="employees.html">Quản lý Nhân viên</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Quản lý Nguyên liệu</h3>
+                <p>Theo dõi tồn kho, nhập xuất nguyên liệu và cảnh báo hết hàng</p>
+                <a href="ingredients.html">Quản lý Nguyên liệu</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Quản lý Bàn ăn</h3>
+                <p>Sắp xếp bàn ăn, theo dõi trạng thái và quản lý khu vực</p>
+                <a href="tables.html">Quản lý Bàn ăn</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Quản lý Đặt bàn</h3>
+                <p>Xử lý yêu cầu đặt bàn, xác nhận và lên lịch cho khách hàng</p>
+                <a href="reservations.html">Quản lý Đặt bàn</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Lịch làm việc</h3>
+                <p>Phân công ca làm việc, theo dõi giờ làm và quản lý lương</p>
+                <a href="schedule.html">Lịch làm việc</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Hóa đơn</h3>
+                <p>Quản lý đơn hàng, thanh toán và xuất hóa đơn cho khách</p>
+                <a href="orders.html">Hóa đơn</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Phản hồi khách hàng</h3>
+                <p>Xem đánh giá, phản hồi của khách và cải thiện chất lượng dịch vụ</p>
+                <a href="feedbacks.html">Phản hồi khách hàng</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const timeOptions = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false 
+            };
+            const dateOptions = { 
+                weekday: 'long',
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric'
+            };
+
+            document.getElementById('currentTime').textContent = now.toLocaleTimeString('vi-VN', timeOptions);
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('vi-VN', dateOptions);
+        }
+        function loadStatistics() {
+            const stats = {
+                totalEmployees: Math.floor(Math.random() * 20) + 15,
+                totalTables: Math.floor(Math.random() * 10) + 20,
+                todayOrders: Math.floor(Math.random() * 50) + 25,
+                monthlyRevenue: (Math.random() * 500 + 200).toFixed(0) + 'M'
+            };
+
+            setTimeout(() => {
+                document.getElementById('totalEmployees').textContent = stats.totalEmployees;
+                document.getElementById('totalTables').textContent = stats.totalTables;
+                document.getElementById('todayOrders').textContent = stats.todayOrders;
+                document.getElementById('monthlyRevenue').textContent = stats.monthlyRevenue;
+            }, 1000);
+        }
+        function confirmLogout(event) {
+            if (event.target.textContent.includes('Đăng xuất')) {
+                if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                    alert('Đã đăng xuất thành công!');
+                    return true;
+                } else {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            loadStatistics();
+            document.addEventListener('click', confirmLogout);
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animation = 'slideUp 0.6s ease-out forwards';
+            });
+        });
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

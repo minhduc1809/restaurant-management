@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Nhân viên</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Quản lý Nhân viên</h1>
+    <nav>
+      <a href="/admin">Trang chủ</a>
+      <a href="/logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <input type="text" id="searchEmployee" placeholder="Tìm kiếm theo tên...">
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Họ tên</th><th>Chức vụ</th><th>SĐT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu từ Flask sẽ hiển thị ở đây -->
+      </tbody>
+    </table>
+  </main>
+  <script src="../js/employees.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý Đặt bàn</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Quản lý Đặt bàn</h1>
+    <nav>
+      <a href="/admin">Trang chủ</a>
+      <a href="/logout">Đăng xuất</a>
+    </nav>
+  </header>
+
+  <main>
+    <input type="text" id="searchReservation" placeholder="Tìm theo tên khách hoặc số điện thoại...">
+    <table id="reservationTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên khách</th>
+          <th>Số điện thoại</th>
+          <th>Ngày đặt</th>
+          <th>Giờ</th>
+          <th>Số người</th>
+          <th>Số bàn</th>
+          <th>Ghi chú</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu sẽ được render từ Flask -->
+      </tbody>
+    </table>
+  </main>
+
+  <script src="../js/reservations.js"></script>
+</body>
+</html>
